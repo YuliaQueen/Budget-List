@@ -1,25 +1,32 @@
 <template>
   <div id="app">
-    <ElMenu mode="horizontal">
-      <ElMenuItem>Site Name</ElMenuItem>
+    <ElMenu mode="horizontal" background-color="#113">
+      <ElMenuItem>SIMPLE BUDGET LIST</ElMenuItem>
       <ElMenuItem>About</ElMenuItem>
       <ElMenuItem>Contacts</ElMenuItem>
       <ElMenuItem>Blog</ElMenuItem>
     </ElMenu>
-    <TotalBalance :total="TotalBalance" />
-    <BudgetList :list="list" @deleteItem="onDeleteItem" />
+    <div class="container">
+      <div class="left-col"><Form @submitForm="onFormSubmit" /></div>
+      <div class="right-col">       
+        <BudgetList :list="list" @deleteItem="onDeleteItem" />
+         <TotalBalance :total="TotalBalance" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import BudgetList from "@/components/BudgetList";
 import TotalBalance from "@/components/TotalBalance";
+import Form from "@/components/Form";
 
 export default {
   name: "App",
   components: {
     BudgetList,
     TotalBalance,
+    Form,
   },
   data: () => ({
     list: {
@@ -49,6 +56,13 @@ export default {
     onDeleteItem(id) {
       this.$delete(this.list, id);
     },
+    onFormSubmit(data) {
+      const newObj = {
+        ...data,
+        id: String(Math.random),
+      };
+      this.$set(this.list, newObj.id, newObj);
+    },
   },
 };
 </script>
@@ -64,5 +78,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.left-col {
+  width: 50%;
+}
+.right-col {
+  width: 50%;
 }
 </style>
