@@ -19,8 +19,11 @@
       <ElButton @click="drawer = true" type="primary" size="mini" style="margin-left: 16px">
         Open menu
       </ElButton>
-      <ElDrawer title="Hello! it`s Menu" :visible.sync="drawer" size="30%">
-        <div>Menu</div>          
+      <ElDrawer title="Hello! it`s Menu" :visible.sync="drawer" size="30%" withHeader="true">
+        <div>Menu Item</div>          
+        <div>Menu Item</div>          
+        <div>Menu Item</div>          
+        <div>Menu Item</div>          
       </ElDrawer>
     </ElMenuItem>
   </ElMenu>
