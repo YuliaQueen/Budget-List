@@ -12,7 +12,8 @@ import {
     Option,
     Alert,
     Menu,
-    MenuItem
+    MenuItem,
+    Avatar
 } from 'element-ui';
 
 const elements = [
@@ -25,7 +26,8 @@ const elements = [
     Option,
     Alert,
     Menu,
-    MenuItem
+    MenuItem,
+    Avatar
 ];
 
 locale.use(lang);

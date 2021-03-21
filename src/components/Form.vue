@@ -34,7 +34,7 @@ export default {
     formData: {
       type: "INCOME",
       comment: "",
-      value: 0,
+      value: '',
     },
     rules: {
       type: [
@@ -47,7 +47,7 @@ export default {
       comment: [
         {
           required: true,
-          message: "Пожалуйста, выберите комментарий",
+          message: "Пожалуйста, введите комментарий",
           trigger: "blur",
         },
       ],

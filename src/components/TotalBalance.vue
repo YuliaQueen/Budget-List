@@ -1,5 +1,5 @@
 <template>
-  <div class="total-value">Balance: {{ total }}</div>
+  <div class="total-value">Balance: {{ total }} руб.</div>
 </template>
 
 <script>

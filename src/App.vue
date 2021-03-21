@@ -1,11 +1,6 @@
 <template>
   <div id="app">
-    <ElMenu mode="horizontal" background-color="#113">
-      <ElMenuItem>SIMPLE BUDGET LIST</ElMenuItem>
-      <ElMenuItem>About</ElMenuItem>
-      <ElMenuItem>Contacts</ElMenuItem>
-      <ElMenuItem>Blog</ElMenuItem>
-    </ElMenu>
+    <Menu />
     <div class="container">
       <div class="left-col"><Form @submitForm="onFormSubmit" /></div>
       <div class="right-col">       
@@ -20,6 +15,7 @@
 import BudgetList from "@/components/BudgetList";
 import TotalBalance from "@/components/TotalBalance";
 import Form from "@/components/Form";
+import Menu from "@/components/Menu";
 
 export default {
   name: "App",
@@ -27,6 +23,7 @@ export default {
     BudgetList,
     TotalBalance,
     Form,
+    Menu
   },
   data: () => ({
     list: {
