@@ -3,9 +3,9 @@
     <Menu />
     <div class="container">
       <div class="left-col"><Form @submitForm="onFormSubmit" /></div>
-      <div class="right-col">       
+      <div class="right-col">
         <BudgetList :list="list" @deleteItem="onDeleteItem" />
-         <TotalBalance :total="TotalBalance" />
+        <TotalBalance :total="TotalBalance" />
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@ export default {
     BudgetList,
     TotalBalance,
     Form,
-    Menu
+    Menu,
   },
   data: () => ({
     list: {

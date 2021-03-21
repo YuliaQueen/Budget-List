@@ -15,12 +15,35 @@
         Julia Koroleva
       </el-row>
     </ElMenuItem>
+    <ElMenuItem>
+      <ElButton @click="drawer = true" type="primary" size="mini" style="margin-left: 16px">
+        Open menu
+      </ElButton>
+      <ElDrawer title="Hello! it`s Menu" :visible.sync="drawer" size="30%">
+        <div>Menu</div>          
+      </ElDrawer>
+    </ElMenuItem>
   </ElMenu>
 </template>
 
 <script>
 export default {
   name: "Menu",
+  data() {
+    return {
+      drawer: false,
+      innerDrawer: false,
+    };
+  },
+  methods: {
+    handleClose(done) {
+      this.$confirm("You still have unsaved data, proceed?")
+        .then(() => {
+          done();
+        })
+        .catch(() => {});
+    },
+  },
 };
 </script>
 
@@ -28,7 +51,5 @@ export default {
 .menu {
   display: flex;
   justify-content: center;
-}
-.avatar {
 }
 </style>

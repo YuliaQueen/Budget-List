@@ -13,7 +13,8 @@ import {
     Alert,
     Menu,
     MenuItem,
-    Avatar
+    Avatar,
+    Drawer
 } from 'element-ui';
 
 const elements = [
@@ -27,7 +28,8 @@ const elements = [
     Alert,
     Menu,
     MenuItem,
-    Avatar
+    Avatar,
+    Drawer
 ];
 
 locale.use(lang);
